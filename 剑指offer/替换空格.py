@@ -16,6 +16,16 @@ class Solution:
 
 
 '''
-方法二：这一题的关键是替换是从往后往前遍历还是从前往后遍历是不一样的，如果从前往后遍历的话，每一个空格都要移动这个空格后面
-所有的字符串一次，但是如果从后往前遍历的话，每一个字符串只需要移动一次。
+方法二：当读取到‘ ’时，就直接加上'%20' 【这里是因为str是可以直接用+号相加而连起来，从而达到替换的效果】
 '''
+class Solution:
+    # s 源字符串
+    def replaceSpace(self, s):
+        # write code here
+        new_s = ''
+        for j in s:
+            if j == ' ':
+                new_s = new_s + '%20'
+            else:
+                new_s=new_s + j
+        return new_s

@@ -44,3 +44,40 @@ class Solution:
             if i < result:
                 result = i
         return result
+    
+    
+    
+    
+  '''
+  法二 sort 排序
+
+class Solution:
+    def minNumberInRotateArray(self, rotateArray):
+        # write code here
+        if not rotateArray:
+            return 0
+        else:
+            rotateArray.sort()
+            return rotateArray[0]
+            
+            
+  法三 二分查找法
+class Solution:
+    def minNumberInRotateArray(self, rotateArray):
+        # write code here
+        length = len(rotateArray)
+        if length == 0:
+           return 0
+        elif length == 1:
+            return rotateArray[0]
+        else:
+            left = 0
+            right = length - 1
+            while left < right:
+                mid = (left + right)/2
+                if rotateArray[mid] < rotateArray[j]:
+                    right = mid
+                else:
+                    left = mid+1
+            return rotateArray[i]
+  '''

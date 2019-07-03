@@ -22,4 +22,20 @@ class Solution:
 '''
 思路二：异或运算
 '''
-
+'''
+# 用的hashmap方法，返回[a,b] a是值，b是出现次数
+        # hashmap就是字典，是无序的
+        hashMap = {}
+        # 把所有的数组里的单词转换成str然后放进字典
+        for i in array:
+            if str(i) in hashMap:
+                hashMap[str(i)] += 1 # 如果已存在，那就加一
+            else:
+                hashMap[str(i)] = 1 # 如果没存在，就设为1
+        # 查找为1的值
+        res = []
+        for k in hashMap.keys():
+            if hashMap[k] == 1:
+                res.append(int(k))
+        return res
+'''
